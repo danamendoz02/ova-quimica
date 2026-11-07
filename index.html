@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#172554">
+  <title>+Edu3 | Explorando la Química</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="Inicio de +Edu3">
+        <span class="brand-mark">+</span>
+        <span><strong>Edu3</strong><small>Sumando a la educación</small></span>
+      </a>
+      <div class="side-label">APRENDIZAJE</div>
+      <button class="nav-link active" data-view="home"><span>⌂</span> Inicio</button>
+      <button class="nav-link" data-view="units"><span>▦</span> Mis unidades</button>
+      <button class="nav-link" data-view="achievements"><span>✦</span> Mis logros</button>
+      <div class="sidebar-note">
+        <span class="note-icon">⚗</span>
+        <strong>¡La ciencia está en todas partes!</strong>
+        <p>Aprende a tu ritmo y descubre cómo funciona el mundo.</p>
+      </div>
+      <div class="sidebar-footer">OVA · QUÍMICA GENERAL<br><span>Un espacio para aprender</span></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+        <div class="breadcrumb">+Edu3 <span>/</span> <b id="breadcrumbCurrent">Inicio</b></div>
+        <div class="top-stats">
+          <div class="stat-pill"><span>🪙</span><b id="coinCount">0</b><small>monedas</small></div>
+          <div class="avatar">🧑‍🔬</div>
+        </div>
+      </header>
+
+      <section class="view active" id="homeView">
+        <div class="welcome-card">
+          <div class="welcome-copy">
+            <span class="eyebrow">TU AVENTURA COMIENZA AQUÍ</span>
+            <h1>¡Hola, explorador/a! <span>👋</span></h1>
+            <p>Prepárate para descubrir la química de una forma sencilla, visual y divertida. ¡Cada pequeño avance cuenta!</p>
+            <button class="primary-btn" id="continueBtn">Continuar aprendiendo <span>→</span></button>
+          </div>
+          <div class="welcome-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="atom">⚛</div><span class="bubble bubble-a">H₂O</span><span class="bubble bubble-b">Na</span><span class="bubble bubble-c">✦</span>
+          </div>
+        </div>
+
+        <div class="section-heading">
+          <div><span class="eyebrow">TU PROGRESO</span><h2>Así va tu aprendizaje</h2></div>
+          <span class="progress-number" id="progressPercent">0%</span>
+        </div>
+        <div class="progress-card">
+          <div class="progress-track"><div class="progress-fill" id="overallProgress"></div></div>
+          <div class="progress-meta"><span id="completedText">0 de 7 unidades completadas</span><span>¡Sigue así!</span></div>
+        </div>
+
+        <div class="section-heading units-heading">
+          <div><span class="eyebrow">RUTA DE APRENDIZAJE</span><h2>Explora las unidades</h2></div>
+          <button class="text-btn" data-goto="units">Ver todas <span>→</span></button>
+        </div>
+        <div class="unit-grid" id="homeUnits"></div>
+        <div class="tip-card"><span class="tip-icon">💡</span><div><b>Un consejo para ti</b><p>No necesitas aprenderlo todo de una vez. Avanza unidad por unidad y practica con los retos.</p></div></div>
+      </section>
+
+      <section class="view" id="unitsView">
+        <div class="page-intro"><span class="eyebrow">TU CONTENIDO</span><h1>Mis unidades</h1><p>Elige un tema y comienza a explorar. Puedes avanzar a tu propio ritmo.</p></div>
+        <div class="filter-row"><span>Contenido de Química General</span><span class="tag">7 unidades</span></div>
+        <div class="unit-grid" id="allUnits"></div>
+      </section>
+
+      <section class="view" id="achievementsView">
+        <div class="page-intro"><span class="eyebrow">¡CADA PASO CUENTA!</span><h1>Mis logros</h1><p>Consigue insignias al completar tus unidades y demostrar lo que has aprendido.</p></div>
+        <div class="achievement-summary"><span>🏆</span><div><b id="badgeCount">0 insignias conseguidas</b><small>¡Sigue explorando para desbloquear más!</small></div></div>
+        <div class="achievement-grid" id="achievementGrid"></div>
+      </section>
+
+      <section class="view" id="lessonView">
+        <button class="back-btn" id="backToUnits">← Volver a las unidades</button>
+        <div id="lessonContent"></div>
+      </section>
+
+      <footer class="footer">+Edu3 · Sumando a la educación de calidad <span>Hecho para aprender, explorar y descubrir.</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
